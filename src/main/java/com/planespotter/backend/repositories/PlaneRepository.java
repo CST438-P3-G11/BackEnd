@@ -26,4 +26,9 @@ public interface PlaneRepository extends JpaRepository<Plane, Long> {
     @Modifying
     @Query(value = "UPDATE \"plane\" SET name = :name WHERE \"plane_id\"  = :id", nativeQuery = true)
     void updatePlaneById(long plane_id, String name);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM \"plane\" WHERE \"plane_id\" = :plane_id", nativeQuery = true)
+    void deletePlaneById(long plane_id);
 }

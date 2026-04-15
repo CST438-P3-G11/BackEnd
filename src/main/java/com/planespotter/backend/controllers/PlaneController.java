@@ -42,12 +42,21 @@ public class PlaneController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @PatchMapping("/updatePlane")
-    public ResponseEntity<Plane> updatePlane(@RequestBody Plane plane) {
+    @PatchMapping("/updatePlane/{id}")
+    public ResponseEntity<Plane> updatePlane(@PathVariable("id") long id, @RequestBody Plane plane) {
         if (!planeRepository.existsById(plane.getPlane_id())) {
             return ResponseEntity.notFound().build();
         }
         planeRepository.updatePlaneById(plane.getPlane_id(), plane.getName());
         return ResponseEntity.ok(plane);
+    }
+
+    @DeleteMapping("/deletePlane/{id}")
+    public ResponseEntity<Void> deletePlane(@PathVariable("id") long id) {
+        if (planeRepository.getById(id) == null) {
+            return ResponseEntity.notFound().build();
+        }
+        planeRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

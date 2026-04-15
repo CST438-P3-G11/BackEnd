@@ -86,7 +86,7 @@ public class PlaneControllerTest {
     void updatePlaneById_successfullyUpdatesPlane() {
         when(planeRepository.existsById(anyLong())).thenReturn(true);
 
-        ResponseEntity<Plane> response = planeController.updatePlane(plane);
+        ResponseEntity<Plane> response = planeController.updatePlane(anyLong(), plane);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(plane, response.getBody());
@@ -96,7 +96,25 @@ public class PlaneControllerTest {
     void updatePlaneById_404WhenIdDoesNotExist() {
         when(planeRepository.existsById(anyLong())).thenReturn(false);
 
-        ResponseEntity<Plane> response = planeController.updatePlane(plane);
+        ResponseEntity<Plane> response = planeController.updatePlane(anyLong(), plane);
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void deletePlaneById_successfullyDeletesPlane() {
+        when(planeRepository.getById(anyLong())).thenReturn(plane);
+
+        ResponseEntity<Void> response = planeController.deletePlane(anyLong());
+
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+    }
+
+    @Test
+    void deletePlaneById_404WhenIdDoesNotExist() {
+        when(planeRepository.getById(anyLong())).thenReturn(null);
+
+        ResponseEntity<Void> response = planeController.deletePlane(anyLong());
 
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
