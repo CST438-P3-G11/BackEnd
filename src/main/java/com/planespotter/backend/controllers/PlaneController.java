@@ -56,7 +56,7 @@ public class PlaneController {
         if (planeRepository.getById(id) == null) {
             return ResponseEntity.notFound().build();
         }
-        planeRepository.deleteById(id);
+        planeRepository.deletePlaneById(id);
         return ResponseEntity.noContent().build();
     }
 }
