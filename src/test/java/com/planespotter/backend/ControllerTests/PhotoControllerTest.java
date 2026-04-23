@@ -93,4 +93,87 @@ public class PhotoControllerTest {
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
+    @Test
+    void getPhotoByUserId_returnsListOfPhotos() {
+        when(photoRepository.getPhotosByUser_id(anyLong())).thenReturn(photos);
+
+        ResponseEntity<List<Photo>> response = photoController.getPhotosByUserId(anyLong());
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(photos, response.getBody());
+    }
+
+    @Test
+    void getPhotosByUserId_404WhenNoPhotosWithId() {
+        when(photoRepository.getPhotosByUser_id(anyLong())).thenReturn(List.of());
+
+        ResponseEntity<List<Photo>> response = photoController.getPhotosByUserId(anyLong());
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void getRandomPhoto_returnsRandomPhoto() {
+        when(photoRepository.getRandomPhoto()).thenReturn(photo);
+
+        ResponseEntity<Photo> response = photoController.getRandomPhoto();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(photo, response.getBody());
+    }
+
+    @Test
+    void getRandomPhoto_404WhenNullReturnFromRepo() {
+        when(photoRepository.getRandomPhoto()).thenReturn(null);
+
+        ResponseEntity<Photo> response = photoController.getRandomPhoto();
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void insertPhoto_inserrtsPhoto() {
+        ResponseEntity<Photo> response = photoController.insertPhoto(photo);
+
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        assertEquals(photo, response.getBody());
+    }
+
+    @Test
+    void updatePhoto_updatesPhoto() {
+        when(photoRepository.getPhotoById(photo.getPhoto_id())).thenReturn(photo);
+
+        ResponseEntity<Photo> response = photoController.updatePhoto(photo);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(photo, response.getBody());
+    }
+
+    @Test
+    void updatePhoto_404WhenIdNotExists() {
+        when(photoRepository.getPhotoById(anyLong())).thenReturn(null);
+
+        ResponseEntity<Photo> response = photoController.updatePhoto(photo);
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void deletePhoto_deletesPhoto() {
+        when(photoRepository.getPhotoById(anyLong())).thenReturn(photo);
+
+        ResponseEntity<Void> response = photoController.deletePhoto(photo.getPhoto_id());
+
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+    }
+
+    @Test
+    void deletePhoto_404WhenIdNotExists() {
+        when(photoRepository.getPhotoById(anyLong())).thenReturn(null);
+
+        ResponseEntity<Void> response = photoController.deletePhoto(photo.getPhoto_id());
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
 }
