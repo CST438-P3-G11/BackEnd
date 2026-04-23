@@ -56,7 +56,7 @@ public class PlaneControllerTest {
     }
 
     @Test
-    void getPlaneById_returnsListPlane() {
+    void getPlaneById_returnsPlane() {
         when(planeRepository.getById(anyLong())).thenReturn(plane);
 
         ResponseEntity<Plane> response = planeController.getPlaneById(anyLong());

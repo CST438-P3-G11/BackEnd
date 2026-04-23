@@ -38,7 +38,7 @@ public class PhotoController {
      * @return Photo object with the given ID, or 404 if no photo with that ID is found.
      */
     @GetMapping("/getById")
-    public ResponseEntity<Photo> getPhoto(@RequestParam("id") long id) {
+    public ResponseEntity<Photo> getPhotoById(@RequestParam("id") long id) {
         Photo photo = photoRepository.getPhotoById(id);
         if (photo == null) {
             return ResponseEntity.notFound().build();
