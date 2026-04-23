@@ -26,17 +26,18 @@ public class PhotoControllerTest {
     private PhotoController photoController;
 
     private Photo photo;
+    private List<Photo> photos;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
         photo = new Photo(1L, 1L, "testing.test");
+        photos = List.of(new Photo(1L, 1L, "testing.test"),
+                        new Photo(2L, 1L, "testing.test"));
     }
 
     @Test
     void getAllPhotos_returnsListOfPhotos() {
-        List<Photo> photos = List.of(new Photo(1L, 1L, "testing.test"),
-                                    new Photo(2L, 1L, "testing.test"));
         when(photoRepository.getAllPhotos()).thenReturn(photos);
 
         ResponseEntity<List<Photo>> response = photoController.getAllPhotos();
@@ -69,6 +70,25 @@ public class PhotoControllerTest {
         when(photoRepository.getPhotoById(anyLong())).thenReturn(null);
 
         ResponseEntity<Photo> response = photoController.getPhotoById(anyLong());
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void getPhotoByPlaneId_returnsListOfPhotos() {
+        when(photoRepository.getPhotosByPlane_id(1L)).thenReturn(photos);
+
+        ResponseEntity<List<Photo>> response = photoController.getPhotosByPlaneId(1L);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(photos, response.getBody());
+    }
+
+    @Test
+    void getPhotoByPlaneId_404WhenNoPhotosExist() {
+        when(photoRepository.getPhotosByPlane_id(anyLong())).thenReturn(List.of());
+
+        ResponseEntity<List<Photo>> response = photoController.getPhotosByPlaneId(anyLong());
 
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
