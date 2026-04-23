@@ -48,7 +48,7 @@ public class JwtService {
         try {
             byte[] decoded = Decoders.BASE64.decode(secret);
             if (decoded.length >= 32) return decoded;
-        } catch (IllegalArgumentException ignored) {
+        } catch (IllegalArgumentException | io.jsonwebtoken.io.DecodingException ignored) {
         }
         byte[] raw = secret.getBytes();
         if (raw.length < 32) {
