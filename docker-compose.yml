@@ -1,0 +1,10 @@
+services:
+  backend:
+    build: .
+    image: planespotter-backend
+    container_name: planespotter-backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    restart: unless-stopped
