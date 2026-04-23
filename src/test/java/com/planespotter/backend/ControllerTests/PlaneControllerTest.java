@@ -84,7 +84,7 @@ public class PlaneControllerTest {
 
     @Test
     void updatePlaneById_successfullyUpdatesPlane() {
-        when(planeRepository.existsById(anyLong())).thenReturn(true);
+        when(planeRepository.existsById(Long.valueOf(anyLong()))).thenReturn(Boolean.valueOf(true));
 
         ResponseEntity<Plane> response = planeController.updatePlane(anyLong(), plane);
 
@@ -94,7 +94,7 @@ public class PlaneControllerTest {
 
     @Test
     void updatePlaneById_404WhenIdDoesNotExist() {
-        when(planeRepository.existsById(anyLong())).thenReturn(false);
+        when(planeRepository.existsById(Long.valueOf(anyLong()))).thenReturn(Boolean.valueOf(false));
 
         ResponseEntity<Plane> response = planeController.updatePlane(anyLong(), plane);
 

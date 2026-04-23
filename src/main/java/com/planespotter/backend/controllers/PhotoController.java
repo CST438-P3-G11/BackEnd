@@ -75,6 +75,19 @@ public class PhotoController {
     }
 
     /**
+     * GET endpoint to get a random photo from the database.
+     * @return One random photo from the database, or 404 if no photo is returned (likely due to an empty DB).
+     */
+    @GetMapping("/getRandomPhoto")
+    public ResponseEntity<Photo> getRandomPhoto() {
+        Photo photo = photoRepository.getRandomPhoto();
+        if (photo == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(photo);
+    }
+
+    /**
      * POST endpoint to add a new photo into the database.
      * @param photo Photo object to insert into the database.
      * @return HTTP 201 after creation.
