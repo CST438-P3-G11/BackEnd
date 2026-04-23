@@ -26,7 +26,7 @@ public class StatsController {
      */
     @GetMapping("/getStats")
     public ResponseEntity<Stats> getStats(@RequestParam("userId") long userId){
-        User user = userRepository.findById(userId).orElse(null);
+        User user = userRepository.findById(Long.valueOf(userId)).orElse(null);
         if (user == null){
             return ResponseEntity.notFound().build();
         }
