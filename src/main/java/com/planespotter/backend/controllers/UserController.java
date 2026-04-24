@@ -39,6 +39,33 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    /**
+     * Updates the name of the user in their User profile
+     * @param new_name, a String
+     * @param authentication, a Authentication
+     * @return a User object
+     */
+    @PatchMapping("/updateName")
+    public ResponseEntity<User> updateName(@RequestBody String new_name, Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(401).build();
+        }
+        // Gets the User
+        User user = userRepository.findByEmail(authentication.getName());
+        // Checks user is not null
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        int result = userRepository.updateName(user.getUser_id(), new_name);
+
+        if (result > 0) {
+            user.setName(new_name);
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.status(401).build();
+    }
+
 
 
 

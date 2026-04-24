@@ -9,10 +9,27 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id;
 
+    private String name;
     private String email;
     private Boolean is_admin;
 
     protected User() {}
+
+    /**
+     * Gets the name of the user
+     * @return A String, name of the user
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Changes the name of the user
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * Constructor for the User class
@@ -20,8 +37,9 @@ public class User {
      * @param email email of the User
      * @param is_admin admin status of User
      */
-    public User(Long user_id, String email, Boolean is_admin) {
+    public User(Long user_id, String name, String email, Boolean is_admin) {
         this.user_id = user_id;
+        this.name = name;
         this.email = email;
         this.is_admin = is_admin;
     }
