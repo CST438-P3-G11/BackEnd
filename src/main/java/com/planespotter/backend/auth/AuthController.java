@@ -50,6 +50,6 @@ public class AuthController {
     private User upsertByEmail(String email) {
         User existing = users.findByEmail(email);
         if (existing != null) return existing;
-        return users.save(new User(null, email, false));
+        return users.save(new User(null, email, Boolean.FALSE));
     }
 }
