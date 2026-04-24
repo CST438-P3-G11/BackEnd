@@ -57,9 +57,13 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
 
-        userRepository.updateName(user.getUser_id(), new_name);
+        int result = userRepository.updateName(user.getUser_id(), new_name);
 
-        return ResponseEntity.ok(user);
+        if (result > 0) {
+            user.setName(new_name);
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.status(401).build();
     }
 
 
