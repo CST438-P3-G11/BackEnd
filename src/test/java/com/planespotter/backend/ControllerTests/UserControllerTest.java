@@ -29,7 +29,7 @@ public class UserControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User(Long.valueOf(1L), "userone@csumb.edu", Boolean.valueOf(true));
+        user = new User(Long.valueOf(1L), "Josh","userone@csumb.edu", Boolean.valueOf(true));
     }
 
     @Test
@@ -59,5 +59,24 @@ public class UserControllerTest {
         ResponseEntity<User> response = userController.me(authentication);
 
         assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
+    }
+
+    @Test
+    public void updateName() {
+        Authentication authentication = org.mockito.Mockito.mock(Authentication.class);
+        when(authentication.isAuthenticated()).thenReturn(true);
+        when(authentication.getName()).thenReturn("userone@csumb.edu");
+        when(userRepository.findByEmail("userone@csumb.edu")).thenReturn(user);
+        when(userRepository.updateName(1L, "Daniel")).thenReturn(1);
+
+        // Updating name to Daniel
+        ResponseEntity<User> response = userController.updateName("Daniel", authentication);
+
+        // Verifying it was called
+        verify(userRepository).updateName(1L, "Daniel");
+
+        // Assert should be OK
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("Daniel", response.getBody().getName());
     }
 }
