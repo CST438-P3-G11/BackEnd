@@ -9,7 +9,7 @@ public class Stats {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long stats_id;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -80,8 +80,8 @@ public class Stats {
      * Getter for the Stats row ID
      * @return the database ID of this stats record, a long
      */
-    public long getId() {
-        return id;
+    public long getStats_id() {
+        return stats_id;
     }
     /**
      * Sets the associated User for this stats record

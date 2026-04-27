@@ -29,14 +29,14 @@ public class UserControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User(1L, "userone@csumb.edu", true);
+        user = new User(Long.valueOf(1L), "userone@csumb.edu", Boolean.valueOf(true));
     }
 
     @Test
     public void testCurrentUser_isAuthenticated() {
         // 1. Mock authentication
         Authentication authentication = org.mockito.Mockito.mock(Authentication.class);
-        when(authentication.isAuthenticated()).thenReturn(true);
+        when(authentication.isAuthenticated()).thenReturn(Boolean.valueOf(true));
         when(authentication.getName()).thenReturn("userone@csumb.edu");
 
         // When calling findByEmail, it returns the user that was set up in @BeforeEach
@@ -51,7 +51,7 @@ public class UserControllerTest {
     @Test
     public void testCurrentUser_isNotAuthenticated() {
         Authentication authentication = org.mockito.Mockito.mock(Authentication.class);
-        when(authentication.isAuthenticated()).thenReturn(false);
+        when(authentication.isAuthenticated()).thenReturn(Boolean.valueOf(false));
         when(authentication.getName()).thenReturn("userone@csumb.edu");
 
         when(userRepository.findByEmail("userone@csumb.edu")).thenReturn(user);

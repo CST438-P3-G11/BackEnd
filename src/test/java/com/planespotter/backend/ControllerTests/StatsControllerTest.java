@@ -35,26 +35,26 @@ public class StatsControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User(1L, "test@email.com", false);
+        user = new User(Long.valueOf(1L), "test@email.com", Boolean.valueOf(false));
         stats = new Stats(user, 10, 3, 5, 7);
     }
 
     @Test
     void getStats_returnsStats() {
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(userRepository.findById(Long.valueOf(1L))).thenReturn(Optional.of(user));
         when(statsRepository.findByUser(user)).thenReturn(stats);
 
         ResponseEntity<Stats> response = statsController.getStats(1L);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(stats, response.getBody());
-        verify(userRepository, times(1)).findById(1L);
+        verify(userRepository, times(1)).findById(Long.valueOf(1L));
         verify(statsRepository, times(1)).findByUser(user);
     }
 
     @Test
     void getStats_404WhenUserNotFound() {
-        when(userRepository.findById(1L)).thenReturn(Optional.empty());
+        when(userRepository.findById(Long.valueOf(1L))).thenReturn(Optional.empty());
 
         ResponseEntity<Stats> response = statsController.getStats(1L);
 
@@ -63,7 +63,7 @@ public class StatsControllerTest {
 
     @Test
     void getStats_404WhenStatsNotFound() {
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(userRepository.findById(Long.valueOf(1L))).thenReturn(Optional.of(user));
         when(statsRepository.findByUser(user)).thenReturn(null);
 
         ResponseEntity<Stats> response = statsController.getStats(1L);
