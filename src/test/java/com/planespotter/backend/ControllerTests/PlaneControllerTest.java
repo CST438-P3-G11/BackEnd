@@ -34,6 +34,11 @@ public class PlaneControllerTest {
     }
 
     @Test
+    void getAllPlanes_returnsListOfPlanes() {
+
+    }
+
+    @Test
     void getPlaneByName_returnsListOfPlanes() {
         List<Plane> planes = Arrays.asList(new Plane(0, "plane 1"),
                                             new Plane(1, "plane 2"));

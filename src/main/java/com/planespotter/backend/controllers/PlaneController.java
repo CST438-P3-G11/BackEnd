@@ -19,6 +19,19 @@ public class PlaneController {
     }
 
     /**
+     * GET endpoint to get all planes from the database.
+     * @return List of all planes in the database, or 404s if the database is empty.
+     */
+    @GetMapping
+    public ResponseEntity<List<Plane>> getAllPlanes() {
+        List<Plane> planes = planeRepository.getAllPlanes();
+        if (planes.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(planes);
+    }
+
+    /**
      * GET endpoint to get a list of planes with the matching name i.e. "Boeing" would return 737, 747, 757, etc...
      * @param name Part or whole name of the plane to match.
      * @return List of planes matching the provided name, or 404s if no matches are found.
@@ -27,6 +40,20 @@ public class PlaneController {
     public ResponseEntity<List<Plane>> getPlaneByName(@RequestParam("name") String name) {
         List<Plane> planes = planeRepository.getByName(name);
         if (planes.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(planes);
+    }
+
+    /**
+     * GET endpoint to get four planes for the game.
+     * The frontend will handle logic for getting a photo for one of the planes returned by this endpoint.
+     * @return A list of four random Planes from the database, or a 404 if the database is empty/less than four are in the DB.
+     */
+    @GetMapping("/getForGame")
+    public ResponseEntity<List<Plane>> getPlanesForGame() {
+        List<Plane> planes = planeRepository.getPlanesForGame();
+        if (planes.size() < 4) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(planes);
