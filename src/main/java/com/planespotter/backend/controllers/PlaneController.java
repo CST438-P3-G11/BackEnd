@@ -65,7 +65,7 @@ public class PlaneController {
      */
     @PatchMapping("/updatePlane/{id}")
     public ResponseEntity<Plane> updatePlane(@PathVariable("id") long id, @RequestBody Plane plane) {
-        if (!planeRepository.existsById(plane.getPlane_id())) {
+        if (!planeRepository.existsById(Long.valueOf(plane.getPlane_id()))) {
             return ResponseEntity.notFound().build();
         }
         planeRepository.updatePlaneById(plane.getPlane_id(), plane.getName());
