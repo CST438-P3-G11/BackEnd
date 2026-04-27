@@ -29,7 +29,7 @@ public class UserControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User(Long.valueOf(1L), "userone@csumb.edu", Boolean.valueOf(true));
+        user = new User(Long.valueOf(1L), "Josh","userone@csumb.edu", Boolean.valueOf(true));
     }
 
     @Test

@@ -35,7 +35,7 @@ public class StatsControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User(Long.valueOf(1L), "test@email.com", Boolean.valueOf(false));
+        user = new User(Long.valueOf(1L),"test", "test@email.com", Boolean.valueOf(false));
         stats = new Stats(user, 10, 3, 5, 7);
     }
 
