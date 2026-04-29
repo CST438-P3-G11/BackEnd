@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 @RequestMapping("/stats")
@@ -35,5 +36,11 @@ public class StatsController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(stats);
+    }
+
+    @GetMapping("/getLeaderboard")
+    public ResponseEntity<List<Stats>> getLeaderboard(){
+        List<Stats> leaderboard = statsRepository.findTop10ByOrderByBestStreakDesc();
+        return ResponseEntity.ok(leaderboard);
     }
 }
