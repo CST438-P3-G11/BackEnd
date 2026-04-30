@@ -135,9 +135,21 @@ public class PlaneControllerTest {
 
     @Test
     void insertPlane_successfullyInsertsPlane() {
+        when(planeRepository.getByName("plane")).thenReturn(List.of());
+
         ResponseEntity<Plane> response = planeController.addPlane(plane);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    }
+
+    @Test
+    void insertPlane_returnsHttpConflictIfPlaneAlreadyExists() {
+        when(planeRepository.getByName("plane")).thenReturn(List.of(plane));
+
+        ResponseEntity<Plane> response = planeController.addPlane(plane);
+
+        assertEquals(HttpStatus.CONFLICT, response.getStatusCode());
+        assertEquals(plane, response.getBody());
     }
 
     @Test

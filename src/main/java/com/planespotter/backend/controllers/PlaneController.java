@@ -76,10 +76,14 @@ public class PlaneController {
     /**
      * POST endpoint to add a plane to the database.
      * @param plane Plane object to add to the database.
-     * @return HTTP.CREATED after the plane is added.
+     * @return HTTP.CREATED after the plane is added, or HTTP 303 if a plane with that name exists in the DB, and the plane object that exists.
      */
     @PostMapping("/addPlane")
     public ResponseEntity<Plane> addPlane(@RequestBody Plane plane) {
+        List<Plane> result = planeRepository.getByName(plane.getName());
+        if (!(result.isEmpty())) {
+            return new ResponseEntity<>(result.getFirst(), HttpStatus.CONFLICT);
+        }
         planeRepository.insertPlane(plane);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
