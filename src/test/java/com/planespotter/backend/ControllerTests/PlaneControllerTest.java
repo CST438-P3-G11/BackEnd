@@ -34,6 +34,64 @@ public class PlaneControllerTest {
     }
 
     @Test
+    void getAllPlanes_returnsListOfPlanes() {
+        List<Plane> planes  = Arrays.asList(new Plane(0, "plane"),
+                                            new Plane(1, "plane"));
+        when(planeRepository.getAllPlanes()).thenReturn(planes);
+
+        ResponseEntity<List<Plane>> response = planeController.getAllPlanes();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(2, response.getBody().size());
+        assertEquals(planes, response.getBody());
+    }
+
+    @Test
+    void getAllPlanes_404OnEmptyList() {
+        when(planeRepository.getAllPlanes()).thenReturn(List.of());
+
+        ResponseEntity<List<Plane>> response = planeController.getAllPlanes();
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void getPlanesForGame_returnsListOfPlanes() {
+        List<Plane> planes = Arrays.asList(new Plane(0, "plane"),
+                                            new Plane(1, "plane"),
+                                            new Plane(2, "plane"),
+                                            new Plane(3, "plane"));
+        when(planeRepository.getPlanesForGame()).thenReturn(planes);
+
+        ResponseEntity<List<Plane>> response = planeController.getPlanesForGame();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(4, response.getBody().size());
+        assertEquals(planes, response.getBody());
+    }
+
+    @Test
+    void getPlanesForGame_404IfLessThanFourPlanes() {
+        List<Plane> planes = Arrays.asList(new Plane(0, "plane"),
+                                            new Plane(1, "plane"),
+                                            new Plane(2, "plane"));
+        when(planeRepository.getPlanesForGame()).thenReturn(planes);
+
+        ResponseEntity<List<Plane>> response = planeController.getPlanesForGame();
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void getPlanesForGame_404OnEmptyList() {
+        when(planeRepository.getPlanesForGame()).thenReturn(List.of());
+
+        ResponseEntity<List<Plane>> response = planeController.getPlanesForGame();
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
     void getPlaneByName_returnsListOfPlanes() {
         List<Plane> planes = Arrays.asList(new Plane(0, "plane 1"),
                                             new Plane(1, "plane 2"));

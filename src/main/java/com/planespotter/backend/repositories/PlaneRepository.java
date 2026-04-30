@@ -16,6 +16,12 @@ public interface PlaneRepository extends JpaRepository<Plane, Long> {
     @Query(value = "SELECT * FROM \"plane\" WHERE plane_id = :id", nativeQuery = true)
     Plane getById(long id);
 
+    @Query(value = "SELECT * FROM \"plane\" ORDER BY RANDOM() LIMIT 4", nativeQuery = true)
+    List<Plane> getPlanesForGame();
+
+    @Query(value = "SELECT * FROM \"plane\"", nativeQuery = true)
+    List<Plane> getAllPlanes();
+
     @Transactional
     @Modifying
     @Query(value = "INSERT INTO \"plane\" (user_id, name) VALUES " +
