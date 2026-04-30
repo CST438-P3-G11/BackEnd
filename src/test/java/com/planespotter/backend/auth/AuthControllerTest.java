@@ -33,7 +33,7 @@ public class AuthControllerTest {
     @Test
     void google_success_newUser_returnsJwtAndCreatesUser() {
         when(googleService.verify("idtok"))
-                .thenReturn(new GoogleIdTokenService.VerifiedGoogleUser("new@example.com", "google-sub-1"));
+                .thenReturn(new GoogleIdTokenService.VerifiedGoogleUser("new@example.com", "google-sub-1", "user-bob"));
         when(users.findByEmail("new@example.com")).thenReturn(null);
         User saved = new User(7L, null, "new@example.com", false);
         when(users.save(any(User.class))).thenReturn(saved);
@@ -52,7 +52,7 @@ public class AuthControllerTest {
     void google_success_existingUser_doesNotSave() {
         User existing = new User(3L, null, "old@example.com", false);
         when(googleService.verify("idtok"))
-                .thenReturn(new GoogleIdTokenService.VerifiedGoogleUser("old@example.com", "google-sub-2"));
+                .thenReturn(new GoogleIdTokenService.VerifiedGoogleUser("old@example.com", "google-sub-2", "user-bob"));
         when(users.findByEmail("old@example.com")).thenReturn(existing);
         when(jwt.issue("old@example.com", 3L)).thenReturn("fake-jwt");
 
@@ -79,7 +79,7 @@ public class AuthControllerTest {
     @Test
     void github_success_newUser_returnsJwtAndCreatesUser() {
         when(githubService.exchangeCode("code123", "redir://"))
-                .thenReturn(new GitHubOAuthService.VerifiedGitHubUser("gh@example.com", "12345"));
+                .thenReturn(new GitHubOAuthService.VerifiedGitHubUser("gh@example.com", "12345", "user-bob"));
         when(users.findByEmail("gh@example.com")).thenReturn(null);
         User saved = new User(8L, null, "gh@example.com", false);
         when(users.save(any(User.class))).thenReturn(saved);
