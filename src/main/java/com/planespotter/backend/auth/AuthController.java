@@ -29,7 +29,7 @@ public class AuthController {
     public ResponseEntity<AuthResponse> google(@Valid @RequestBody GoogleAuthRequest req) {
         try {
             var verified = googleService.verify(req.idToken());
-            User user = upsertByEmail(verified.email());
+            User user = upsertByEmail(verified.email(), verified.name());
             return ResponseEntity.ok(AuthResponse.of(jwt.issue(user.getEmail(), user.getUser_id()), user));
         } catch (GoogleIdTokenService.InvalidTokenException e) {
             return ResponseEntity.status(401).build();
@@ -40,16 +40,16 @@ public class AuthController {
     public ResponseEntity<AuthResponse> github(@Valid @RequestBody GitHubAuthRequest req) {
         try {
             var verified = githubService.exchangeCode(req.code(), req.redirectUri());
-            User user = upsertByEmail(verified.email());
+            User user = upsertByEmail(verified.email(), verified.name());
             return ResponseEntity.ok(AuthResponse.of(jwt.issue(user.getEmail(), user.getUser_id()), user));
         } catch (GitHubOAuthService.InvalidTokenException e) {
             return ResponseEntity.status(401).build();
         }
     }
 
-    private User upsertByEmail(String email) {
+    private User upsertByEmail(String email, String name) {
         User existing = users.findByEmail(email);
         if (existing != null) return existing;
-        return users.save(new User(null, null, email, Boolean.FALSE));
+        return users.save(new User(null, name, email, Boolean.FALSE));
     }
 }

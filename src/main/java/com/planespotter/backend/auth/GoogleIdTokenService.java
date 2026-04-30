@@ -39,16 +39,17 @@ public class GoogleIdTokenService {
                 throw new InvalidTokenException("Google ID token failed verification");
             }
             GoogleIdToken.Payload payload = idToken.getPayload();
+            String name = payload.get("name") != null ? payload.get("name").toString() : null;
             if (!Boolean.TRUE.equals(payload.getEmailVerified())) {
                 throw new InvalidTokenException("Google email is not verified");
             }
-            return new VerifiedGoogleUser(payload.getEmail(), payload.getSubject());
+            return new VerifiedGoogleUser(payload.getEmail(), payload.getSubject(), name);
         } catch (GeneralSecurityException | IOException e) {
             throw new InvalidTokenException("Error verifying Google ID token: " + e.getMessage());
         }
     }
 
-    public record VerifiedGoogleUser(String email, String googleSubject) {}
+    public record VerifiedGoogleUser(String email, String googleSubject, String name) {}
 
     public static class InvalidTokenException extends RuntimeException {
         public InvalidTokenException(String msg) { super(msg); }

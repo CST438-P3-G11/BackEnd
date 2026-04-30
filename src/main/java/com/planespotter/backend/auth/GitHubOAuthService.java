@@ -52,6 +52,8 @@ public class GitHubOAuthService {
         if (userResp == null) throw new InvalidTokenException("GitHub /user returned empty");
 
         String email = userResp.get("email") != null ? userResp.get("email").toString() : null;
+        String name = userResp.get("name") != null ? userResp.get("name").toString() : null;
+
         if (email == null || email.isBlank()) {
             email = fetchPrimaryEmail(accessToken);
         }
@@ -59,7 +61,7 @@ public class GitHubOAuthService {
 
         Object idObj = userResp.get("id");
         String githubId = idObj == null ? null : idObj.toString();
-        return new VerifiedGitHubUser(email, githubId);
+        return new VerifiedGitHubUser(email, githubId, name);
     }
 
     private String fetchPrimaryEmail(String accessToken) {
@@ -93,7 +95,7 @@ public class GitHubOAuthService {
         return java.net.URLEncoder.encode(s, java.nio.charset.StandardCharsets.UTF_8);
     }
 
-    public record VerifiedGitHubUser(String email, String githubId) {}
+    public record VerifiedGitHubUser(String email, String githubId, String name) {}
 
     public static class InvalidTokenException extends RuntimeException {
         public InvalidTokenException(String msg) { super(msg); }
