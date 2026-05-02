@@ -35,7 +35,7 @@ public class StatsControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User(Long.valueOf(1L),"test", "test@email.com", Boolean.valueOf(false));
+        user = new User(Long.valueOf(1L), "test", "test@email.com", Boolean.valueOf(false));
         stats = new Stats(user, 10, 3, 5, 7);
     }
 
@@ -69,5 +69,44 @@ public class StatsControllerTest {
         ResponseEntity<Stats> response = statsController.getStats(1L);
 
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void insertStats_insertsStats() {
+        ResponseEntity<Stats> response = statsController.insertStats(stats);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    void sendResult_successfullyUpdatesCorrectAnswers() {
+        Stats expectedStats = new Stats(stats.getUser(),
+                stats.getGamesPlayed() + 1,
+                stats.getWinningStreak() + 1,
+                stats.getBestStreak() + 1,
+                stats.getCorrectGuesses() + 1);
+        when(statsRepository.findByUserId(Long.valueOf(1L))).thenReturn(stats);
+        when(statsRepository.findByUserId(Long.valueOf(1L))).thenReturn(expectedStats);
+
+        ResponseEntity<Stats> response = statsController.sendResult(1L, true);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(expectedStats, response.getBody());
+    }
+
+    @Test
+    void sendResult_successfullyUpdatesWrongAnswer() {
+        Stats expectedStats = new Stats(stats.getUser(),
+                stats.getGamesPlayed() + 1,
+                0,
+                stats.getBestStreak(),
+                stats.getCorrectGuesses());
+        when(statsRepository.findByUserId(Long.valueOf(1L))).thenReturn(stats);
+        when(statsRepository.findByUserId(Long.valueOf(1L))).thenReturn(expectedStats);
+
+        ResponseEntity<Stats> response = statsController.sendResult(1L, false);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(expectedStats, response.getBody());
     }
 }
