@@ -61,6 +61,20 @@ public class PhotoController {
     }
 
     /**
+     * GET endpoint to get a random photo for a plane with a given ID.
+     * @param planeId ID of the plane to get a single photo for.
+     * @return Single photo with the given plane ID, or 404 if no photos with that plane ID exist.
+     */
+    @GetMapping("/getRandomByPlaneId")
+    public ResponseEntity<Photo> getRandomByPlaneId(@RequestParam("plane_id") long planeId) {
+        Photo photo = photoRepository.getRandomPhotoByPlane_id(planeId);
+        if (photo == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(photo);
+    }
+
+    /**
      * GET endpoint to retrieve all photos associated with a specified user ID.
      * @param userId ID of the user to get all photos from.
      * @return List of photos associated with the provided user ID, orr 404 if no photos associated with it exist.
