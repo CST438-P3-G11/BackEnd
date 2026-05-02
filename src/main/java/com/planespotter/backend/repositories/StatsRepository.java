@@ -13,6 +13,8 @@ import java.util.List;
 public interface StatsRepository extends JpaRepository<Stats, Long> {
     Stats findByUser(User user);
     List<Stats> findTop10ByOrderByBestStreakDesc();
+
+    @Query(value = "SELECT * FROM \"stats\" WHERE user_id = :userId", nativeQuery = true)
     Stats findByUserId(long userId);
 
     @Modifying
