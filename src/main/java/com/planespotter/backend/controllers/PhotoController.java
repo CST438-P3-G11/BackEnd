@@ -118,7 +118,7 @@ public class PhotoController {
      * @return HTTP 204 on successful deletion, or 404 if no photo with the given ID exists.
      */
     @DeleteMapping("/deletePhoto/{id}")
-    public ResponseEntity<Void> deletePhoto(@RequestParam("id") long id) {
+    public ResponseEntity<Void> deletePhoto(@PathVariable("id") long id) {
         if (photoRepository.getPhotoById(id) == null) {
             return ResponseEntity.notFound().build();
         }
