@@ -30,7 +30,7 @@ public interface PlaneRepository extends JpaRepository<Plane, Long> {
 
     @Transactional
     @Modifying
-    @Query(value = "UPDATE \"plane\" SET name = :name WHERE \"plane_id\"  = :id", nativeQuery = true)
+    @Query(value = "UPDATE \"plane\" SET name = :name WHERE \"plane_id\" = :plane_id", nativeQuery = true)
     void updatePlaneById(long plane_id, String name);
 
     @Transactional
