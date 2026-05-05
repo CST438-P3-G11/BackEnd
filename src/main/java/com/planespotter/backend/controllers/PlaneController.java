@@ -99,7 +99,7 @@ public class PlaneController {
         if (!planeRepository.existsById(Long.valueOf(plane.getPlane_id()))) {
             return ResponseEntity.notFound().build();
         }
-        planeRepository.updatePlaneById(plane.getPlane_id(), plane.getName());
+        planeRepository.updatePlaneById(id, plane.getName());
         return ResponseEntity.ok(plane);
     }
 

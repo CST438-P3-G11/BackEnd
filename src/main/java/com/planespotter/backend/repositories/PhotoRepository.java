@@ -38,7 +38,7 @@ public interface PhotoRepository extends JpaRepository<Photo, Long> {
     @Transactional
     @Modifying
     @Query(value = "UPDATE \"photo\" SET user_id = :#{#photo.user_id}, " +
-            "plane_id = :#{#photo.plane_id}, url = :#{#photo.url}", nativeQuery = true)
+            "plane_id = :#{#photo.plane_id}, url = :#{#photo.url} WHERE photo_id = #{#photo.photo_id}", nativeQuery = true)
     void updatePhoto(Photo photo);
 
     @Transactional
