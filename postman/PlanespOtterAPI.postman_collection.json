@@ -1,0 +1,2717 @@
+{
+  "info": {
+    "_postman_id": "13bec2e1-e9d8-46d4-926a-28c085799d06",
+    "name": "PlanespOtterAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53397664",
+    "_collection_link": "https://go.postman.co/collection/53397664-13bec2e1-e9d8-46d4-926a-28c085799d06?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GetCurrentUser",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/user/currentUser",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "user",
+            "currentUser"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetCurrentUser",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/user/currentUser",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user",
+                "currentUser"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:09:06 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "73"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "edfdda2d-b523-4324"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f62ee73d9e8306f-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 10,\n    \"name\": \"Neil Cabanilla\",\n    \"email\": \"ncabanilla@csumb.edu\",\n    \"is_admin\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "UpdateName (User)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "Neil Cabanilla Jr.",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/user/updateName",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "user",
+            "updateName"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "UpdateName (User)",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "Neil Cabanilla Jr.",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/user/updateName",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user",
+                "updateName"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:22:03 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "77"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "8f0d623e-4212-4e14"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f630166efe7b828-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 10,\n    \"name\": \"Neil Cabanilla Jr.\",\n    \"email\": \"ncabanilla@csumb.edu\",\n    \"is_admin\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "GetStats (Stat of a User)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/stats/getStats?userId={{userId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "stats",
+            "getStats"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "{{userId}}",
+              "description": "This should be ncabanilla@csumb.edu User",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetStats (Stat of a User)",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/stats/getStats?userId={{userId}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "stats",
+                "getStats"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "description": "This should be ncabanilla@csumb.edu User",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:26:41 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "139"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "836beb35-9b1f-4fd0"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f630834f988be62-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user\": {\n        \"user_id\": 10,\n        \"name\": \"Neil Cabanilla Jr.\",\n        \"email\": \"ncabanilla@csumb.edu\",\n        \"is_admin\": true\n    },\n    \"gamesPlayed\": 1,\n    \"winningStreak\": 0,\n    \"bestStreak\": 0,\n    \"correctGuesses\": 2,\n    \"stats_id\": 2\n}"
+        }
+      ]
+    },
+    {
+      "name": "GetLeaderboard (Ordered by Best Streak)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/stats/getLeaderboard",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "stats",
+            "getLeaderboard"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetLeaderboard (Ordered by Best Streak)",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/stats/getLeaderboard",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "stats",
+                "getLeaderboard"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:28:29 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "186"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "0317c633-0b6b-46b1"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f630ada7c2f3222-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user\": {\n            \"user_id\": 9,\n            \"name\": \"Daniel Everman\",\n            \"email\": \"deverman@csumb.edu\",\n            \"is_admin\": false\n        },\n        \"gamesPlayed\": 24,\n        \"winningStreak\": 22,\n        \"bestStreak\": 22,\n        \"correctGuesses\": 23,\n        \"stats_id\": 1\n    },\n    {\n        \"user\": {\n            \"user_id\": 10,\n            \"name\": \"Neil Cabanilla Jr.\",\n            \"email\": \"ncabanilla@csumb.edu\",\n            \"is_admin\": true\n        },\n        \"gamesPlayed\": 1,\n        \"winningStreak\": 0,\n        \"bestStreak\": 0,\n        \"correctGuesses\": 2,\n        \"stats_id\": 2\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetAllPlanes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/planes",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetAllPlanes",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/planes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:34:53 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "217"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "eb1917c4-30bd-4d5c"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6314366fe9dac8-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user_id\": 2,\n        \"name\": \"Airbus A320\",\n        \"plane_id\": 1\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 737-800\",\n        \"plane_id\": 2\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"McDonnell Douglas MD-83\",\n        \"plane_id\": 3\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 757-300\",\n        \"plane_id\": 4\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Airbus A350-900\",\n        \"plane_id\": 5\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Bombardier Challenger 650\",\n        \"plane_id\": 6\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 747-400\",\n        \"plane_id\": 7\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Lockheed L-1011-500 TriStar\",\n        \"plane_id\": 8\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Douglas DC-9-50\",\n        \"plane_id\": 9\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Airbus A321neo\",\n        \"plane_id\": 10\n    },\n    {\n        \"user_id\": 9,\n        \"name\": \"Embraer 175\",\n        \"plane_id\": 12\n    },\n    {\n        \"user_id\": 9,\n        \"name\": \"Airbus A319\",\n        \"plane_id\": 13\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetPlaneByName",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/planes/getByName?name=Boeing",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes",
+            "getByName"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Boeing",
+              "description": "Get all planes that has Boeing in the name",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetPlaneByName",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/planes/getByName?name=Boeing",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "getByName"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Boeing",
+                  "description": "Get all planes that has Boeing in the name"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:36:12 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "72"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "9980e457-8aa4-4d4a"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6316244e40ce5c-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 737-800\",\n        \"plane_id\": 2\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 757-300\",\n        \"plane_id\": 4\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 747-400\",\n        \"plane_id\": 7\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetPlanesForGame",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/planes/getForGame",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes",
+            "getForGame"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetPlanesForGame",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/planes/getForGame",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "getForGame"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:37:43 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "132"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "79c318d7-8753-4f54"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6318611d2758f1-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user_id\": 2,\n        \"name\": \"Boeing 747-400\",\n        \"plane_id\": 7\n    },\n    {\n        \"user_id\": 9,\n        \"name\": \"Embraer 175\",\n        \"plane_id\": 12\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"McDonnell Douglas MD-83\",\n        \"plane_id\": 3\n    },\n    {\n        \"user_id\": 2,\n        \"name\": \"Bombardier Challenger 650\",\n        \"plane_id\": 6\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetPlaneById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/planes/getById?plane_id=1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes",
+            "getById"
+          ],
+          "query": [
+            {
+              "key": "plane_id",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetPlaneById",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/planes/getById?plane_id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "getById"
+              ],
+              "query": [
+                {
+                  "key": "plane_id",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:39:02 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "51"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "e2e46697-afd7-47b3"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f631a4dac87b1ae-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 2,\n    \"name\": \"Airbus A320\",\n    \"plane_id\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "AddPlane",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\" : 10,\r\n    \"name\" : \"TestingPlane\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/planes/addPlane",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes",
+            "addPlane"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "AddPlane",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user_id\" : 10,\r\n    \"name\" : \"TestingPlane\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/planes/addPlane",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "addPlane"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:42:32 GMT"
+            },
+            {
+              "key": "content-length",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "8d49604d-5561-4e8a"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f631f669d50fdda-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "AddPlane (Can't add duplicated Plane)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user_id\" : 10,\r\n    \"name\" : \"TestingPlane\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/planes/addPlane",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "addPlane"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 409
+            },
+            {
+              "key": "date",
+              "value": "Sun, 03 May 2026 23:43:16 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "54"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "b4b499f6-8a69-46fe"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f63207e6f9cfdda-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 10,\n    \"name\": \"TestingPlane\",\n    \"plane_id\": 14\n}"
+        }
+      ]
+    },
+    {
+      "name": "UpdatePlane",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"plane_id\": 15,\r\n    \"user_id\" : 10,\r\n    \"name\" : \"TestingPlane\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/planes/updatePlane/14",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes",
+            "updatePlane",
+            "14"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "UpdatePlane",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"plane_id\": 15,\r\n    \"user_id\" : 10,\r\n    \"name\" : \"TestingPlane\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/planes/updatePlane/14",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "updatePlane",
+                "14"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 403
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 01:28:31 GMT"
+            },
+            {
+              "key": "content-length",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "7b1264ae-8c6f-455f"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f63baae2a25ed38-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "DeletePlane",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/planes/deletePlane/14",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "planes",
+            "deletePlane",
+            "14"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "DeletePlane",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/planes/deletePlane/14",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "planes",
+                "deletePlane",
+                "14"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 204
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:02:37 GMT"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "d50cdb02-6d2c-499f"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f633cd7aa77c6c6-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "GetAllPhotos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/photos/getAllPhotos",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "getAllPhotos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetAllPhotos",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/photos/getAllPhotos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "getAllPhotos"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:04:59 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "842"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "691bce4b-336d-44c7"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f63404c1eb22546-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user_id\": 9,\n        \"plane_id\": 1,\n        \"url\": \"https://cdn.jetphotos.com/full/2/15190_1063675846.jpg\",\n        \"photo_id\": 1\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 1,\n        \"url\": \"https://www.aviationtoday.com/wp-content/uploads/2015/12/VirginAmericaInFlight3.jpg\",\n        \"photo_id\": 2\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 2,\n        \"url\": \"https://cdn.jetphotos.com/full/6/52128_1655584941.jpg\",\n        \"photo_id\": 3\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 2,\n        \"url\": \"https://live.staticflickr.com/4857/46193514174_460d9e865d_b.jpg\",\n        \"photo_id\": 4\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 3,\n        \"url\": \"https://cdn.plnspttrs.net/41425/n564aa-american-airlines-mcdonnell-douglas-md-83-dc-9-83_PlanespottersNet_330634_bab0fa61d3_o.jpg\",\n        \"photo_id\": 5\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 4,\n        \"url\": \"https://i0.wp.com/northwestairlineshistory.org/wp-content/uploads/2020/04/NWA_753_N591NW_MSP_2009-03_Norris.jpg\",\n        \"photo_id\": 6\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 4,\n        \"url\": \"https://cdn.jetphotos.com/full/1/47084_1158327251.jpg\",\n        \"photo_id\": 7\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 5,\n        \"url\": \"https://static0.simpleflyingimages.com/wordpress/wp-content/uploads/2021/02/French-bee-Airbus-A350-941-F-HREV-2-scaled.jpg\",\n        \"photo_id\": 8\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 6,\n        \"url\": \"https://chapmanfreeborn.aero/wp-content/uploads/2025/01/Bombardier-Challenger-650-feature-image.jpg\",\n        \"photo_id\": 9\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 7,\n        \"url\": \"https://i.insider.com/58b9eb7ebe967321028b4c81\",\n        \"photo_id\": 10\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 8,\n        \"url\": \"https://deltamuseum.org/images/default-source/research/aircraft-by-type/jets/lockheed-l-1011-1973-2001/l-1011-500-mountains.jpg\",\n        \"photo_id\": 11\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 9,\n        \"url\": \"https://cdn.jetphotos.com/full/1/61610_1191969628.jpg\",\n        \"photo_id\": 12\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 10,\n        \"url\": \"https://global.discourse-cdn.com/infiniteflight/original/4X/b/d/9/bd95f601c511567fb78762a301ca5eff88f8919d.jpeg\",\n        \"photo_id\": 13\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 12,\n        \"url\": \"https://i.imgur.com/yiT90vB.jpeg\",\n        \"photo_id\": 15\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 13,\n        \"url\": \"https://cdn.plnspttrs.net/44059/n834aw-america-west-airlines-airbus-a319-132_PlanespottersNet_008123_5a585fbb3a_o.jpg\",\n        \"photo_id\": 16\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 7,\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/1/1d/N661US_1_B747-451_Northwest_A-l_KIX_11JAN99_%286559458855%29.jpg\",\n        \"photo_id\": 17\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetPhotoById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/photos/getById?id=1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "getById"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetPhotoById",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/photos/getById?id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "getById"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:05:58 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "88"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "208cef03-9aad-4be1"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6341c2dd782546-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 9,\n    \"plane_id\": 1,\n    \"url\": \"https://cdn.jetphotos.com/full/2/15190_1063675846.jpg\",\n    \"photo_id\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "GetPhotosByPlaneId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/photos/getByPlaneId?plane_id=2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "getByPlaneId"
+          ],
+          "query": [
+            {
+              "key": "plane_id",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetPhotosByPlaneId",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/photos/getByPlaneId?plane_id=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "getByPlaneId"
+              ],
+              "query": [
+                {
+                  "key": "plane_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:07:11 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "137"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "60db0d3a-dade-42b8"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f634389ced02546-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user_id\": 9,\n        \"plane_id\": 2,\n        \"url\": \"https://cdn.jetphotos.com/full/6/52128_1655584941.jpg\",\n        \"photo_id\": 3\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 2,\n        \"url\": \"https://live.staticflickr.com/4857/46193514174_460d9e865d_b.jpg\",\n        \"photo_id\": 4\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetPhotosByUserId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/photos/getByUserId?user_id=9",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "getByUserId"
+          ],
+          "query": [
+            {
+              "key": "user_id",
+              "value": "9"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetPhotosByUserId",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/photos/getByUserId?user_id=9",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "getByUserId"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:12:42 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "842"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "95546a83-5227-445b"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f634b9cbcbfcf1f-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"user_id\": 9,\n        \"plane_id\": 1,\n        \"url\": \"https://cdn.jetphotos.com/full/2/15190_1063675846.jpg\",\n        \"photo_id\": 1\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 1,\n        \"url\": \"https://www.aviationtoday.com/wp-content/uploads/2015/12/VirginAmericaInFlight3.jpg\",\n        \"photo_id\": 2\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 2,\n        \"url\": \"https://cdn.jetphotos.com/full/6/52128_1655584941.jpg\",\n        \"photo_id\": 3\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 2,\n        \"url\": \"https://live.staticflickr.com/4857/46193514174_460d9e865d_b.jpg\",\n        \"photo_id\": 4\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 3,\n        \"url\": \"https://cdn.plnspttrs.net/41425/n564aa-american-airlines-mcdonnell-douglas-md-83-dc-9-83_PlanespottersNet_330634_bab0fa61d3_o.jpg\",\n        \"photo_id\": 5\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 4,\n        \"url\": \"https://i0.wp.com/northwestairlineshistory.org/wp-content/uploads/2020/04/NWA_753_N591NW_MSP_2009-03_Norris.jpg\",\n        \"photo_id\": 6\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 4,\n        \"url\": \"https://cdn.jetphotos.com/full/1/47084_1158327251.jpg\",\n        \"photo_id\": 7\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 5,\n        \"url\": \"https://static0.simpleflyingimages.com/wordpress/wp-content/uploads/2021/02/French-bee-Airbus-A350-941-F-HREV-2-scaled.jpg\",\n        \"photo_id\": 8\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 6,\n        \"url\": \"https://chapmanfreeborn.aero/wp-content/uploads/2025/01/Bombardier-Challenger-650-feature-image.jpg\",\n        \"photo_id\": 9\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 7,\n        \"url\": \"https://i.insider.com/58b9eb7ebe967321028b4c81\",\n        \"photo_id\": 10\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 8,\n        \"url\": \"https://deltamuseum.org/images/default-source/research/aircraft-by-type/jets/lockheed-l-1011-1973-2001/l-1011-500-mountains.jpg\",\n        \"photo_id\": 11\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 9,\n        \"url\": \"https://cdn.jetphotos.com/full/1/61610_1191969628.jpg\",\n        \"photo_id\": 12\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 10,\n        \"url\": \"https://global.discourse-cdn.com/infiniteflight/original/4X/b/d/9/bd95f601c511567fb78762a301ca5eff88f8919d.jpeg\",\n        \"photo_id\": 13\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 12,\n        \"url\": \"https://i.imgur.com/yiT90vB.jpeg\",\n        \"photo_id\": 15\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 13,\n        \"url\": \"https://cdn.plnspttrs.net/44059/n834aw-america-west-airlines-airbus-a319-132_PlanespottersNet_008123_5a585fbb3a_o.jpg\",\n        \"photo_id\": 16\n    },\n    {\n        \"user_id\": 9,\n        \"plane_id\": 7,\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/1/1d/N661US_1_B747-451_Northwest_A-l_KIX_11JAN99_%286559458855%29.jpg\",\n        \"photo_id\": 17\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "GetRandomPhoto",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/photos/getRandomPhoto",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "getRandomPhoto"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GetRandomPhoto",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/photos/getRandomPhoto",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "getRandomPhoto"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:13:29 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "95"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "72263eb1-86a9-4743"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f634cc3cf35cf1f-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 9,\n    \"plane_id\": 2,\n    \"url\": \"https://live.staticflickr.com/4857/46193514174_460d9e865d_b.jpg\",\n    \"photo_id\": 4\n}"
+        }
+      ]
+    },
+    {
+      "name": "AddPhoto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\" : 10,\r\n    \"plane_id\" : 14,\r\n    \"url\" : \"www.google.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/photos/addPhoto",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "addPhoto"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "AddPhoto",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user_id\" : 10,\r\n    \"plane_id\" : 14,\r\n    \"url\" : \"www.google.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/photos/addPhoto",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "addPhoto"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:16:18 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "62"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "155a9bbe-a5e8-4f7c"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6350e4487fcf13-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 10,\n    \"plane_id\": 14,\n    \"url\": \"www.google.com\",\n    \"photo_id\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "UpdatePhoto",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"photo_id\" : 20,\r\n    \"user_id\" : 10,\r\n    \"plane_id\" : 14,\r\n    \"url\" : \"www.testingurlphoto.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/photos/updatePhoto/20",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "updatePhoto",
+            "20"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "UpdatePhoto",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"photo_id\" : 20,\r\n    \"user_id\" : 10,\r\n    \"plane_id\" : 14,\r\n    \"url\" : \"www.testingurlphoto.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/photos/updatePhoto/20",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "updatePhoto",
+                "20"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:20:08 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "71"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "e0dcfb6b-b9ed-403d"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f63567fcf48d045-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user_id\": 10,\n    \"plane_id\": 14,\n    \"url\": \"www.testingurlphoto.com\",\n    \"photo_id\": 20\n}"
+        }
+      ]
+    },
+    {
+      "name": "DeletePhoto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/photos/deletePhoto/20",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "photos",
+            "deletePhoto",
+            "20"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "DeletePhoto",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/photos/deletePhoto/20",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "photos",
+                "deletePhoto",
+                "20"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 204
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 00:38:43 GMT"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "0ea7dbec-0c00-4682"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6371904e9d2c2d-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "AuthResponseGoogle",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"idToken\" : \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjE5Y2FhZWNkZThmNDg1ZThmNTkzOGY0OGFiYTBjZTdhMzU4MWYwMjciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4NDY1Mjk0ODk5NTYtbWY0Z3ZvOG0ya2Q2YzIxYWYydTN1cTBqODIwdDRjMWQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4NDY1Mjk0ODk5NTYtbWY0Z3ZvOG0ya2Q2YzIxYWYydTN1cTBqODIwdDRjMWQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTIxNzI4MTQwNTk3MjUwNTE1NjUiLCJoZCI6ImNzdW1iLmVkdSIsImVtYWlsIjoibmNhYmFuaWxsYUBjc3VtYi5lZHUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibm9uY2UiOiIyMDk3MWUxNGM2MDNiMmJhMDVlODlkMTIzMTRhM2NjZTYwMDk0MGY5ZDliY2Y5MzljMGI5NDZiNTM1YjMzNTBjIiwibmJmIjoxNzc3ODU1ODE5LCJuYW1lIjoiTmVpbCBDYWJhbmlsbGEiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSTU0YlFoRklXTU1BU0FpNTFsS1RXcHNjX0tvLVV3X2hDTU9yYlZxOENPbjV6cHRRPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Ik5laWwiLCJmYW1pbHlfbmFtZSI6IkNhYmFuaWxsYSIsImlhdCI6MTc3Nzg1NjExOSwiZXhwIjoxNzc3ODU5NzE5LCJqdGkiOiI0ZjJmMjE0ZmJiOGJhMDkwNThiOGQwNGRjMmQ5NWY2Nzk0NzI1ZTRjIn0.FsDSJBB3ifbvcV24IhDARm7Zjdej2eCFXTxK8ZtzZH94n3TXdgnKxVqe23mTGAFW3CYAZpDG9q7JBBAwFX18vZxhgdUMmQHlsiCtSAA0DUt6_14ccVkSNJYvB1xMzAjwrPplxduMn5H256m91TaIo9r4tG6TNtUQ9V1lB6VnkQz9fxsPXbvIj1BtZZ6oWN2vRTsOnCFV1XgR5RkM8YFbeL5TL2SfrzmXeQxpFnBxLU9QF5Sq3j2DxoRXlyGvQSVWWmr3JDJhvN7Uk5UydRaRvxEXHygsJK234qPY4Z82AImFiRyTz5S8BXUprjZw5TsTzbXXAiY-KurTqAuGbb1iIA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/google",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "google"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "AuthResponseGoogle",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"idToken\" : \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjE5Y2FhZWNkZThmNDg1ZThmNTkzOGY0OGFiYTBjZTdhMzU4MWYwMjciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4NDY1Mjk0ODk5NTYtbWY0Z3ZvOG0ya2Q2YzIxYWYydTN1cTBqODIwdDRjMWQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4NDY1Mjk0ODk5NTYtbWY0Z3ZvOG0ya2Q2YzIxYWYydTN1cTBqODIwdDRjMWQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTIxNzI4MTQwNTk3MjUwNTE1NjUiLCJoZCI6ImNzdW1iLmVkdSIsImVtYWlsIjoibmNhYmFuaWxsYUBjc3VtYi5lZHUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibm9uY2UiOiIyMDk3MWUxNGM2MDNiMmJhMDVlODlkMTIzMTRhM2NjZTYwMDk0MGY5ZDliY2Y5MzljMGI5NDZiNTM1YjMzNTBjIiwibmJmIjoxNzc3ODU1ODE5LCJuYW1lIjoiTmVpbCBDYWJhbmlsbGEiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSTU0YlFoRklXTU1BU0FpNTFsS1RXcHNjX0tvLVV3X2hDTU9yYlZxOENPbjV6cHRRPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Ik5laWwiLCJmYW1pbHlfbmFtZSI6IkNhYmFuaWxsYSIsImlhdCI6MTc3Nzg1NjExOSwiZXhwIjoxNzc3ODU5NzE5LCJqdGkiOiI0ZjJmMjE0ZmJiOGJhMDkwNThiOGQwNGRjMmQ5NWY2Nzk0NzI1ZTRjIn0.FsDSJBB3ifbvcV24IhDARm7Zjdej2eCFXTxK8ZtzZH94n3TXdgnKxVqe23mTGAFW3CYAZpDG9q7JBBAwFX18vZxhgdUMmQHlsiCtSAA0DUt6_14ccVkSNJYvB1xMzAjwrPplxduMn5H256m91TaIo9r4tG6TNtUQ9V1lB6VnkQz9fxsPXbvIj1BtZZ6oWN2vRTsOnCFV1XgR5RkM8YFbeL5TL2SfrzmXeQxpFnBxLU9QF5Sq3j2DxoRXlyGvQSVWWmr3JDJhvN7Uk5UydRaRvxEXHygsJK234qPY4Z82AImFiRyTz5S8BXUprjZw5TsTzbXXAiY-KurTqAuGbb1iIA\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/google",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "google"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 01:05:37 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "208"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "rndr-id",
+              "value": "20f436c7-3aed-4488"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000 ; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9f6399212f5789cc-SJC"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuY2FiYW5pbGxhQGNzdW1iLmVkdSIsInVpZCI6MTAsImlhdCI6MTc3Nzg1NjczNywiZXhwIjoxNzc3OTQzMTM3fQ.X_rsVCJr0h3Mu4bPtWMeD4vAmQCTQQ8eH5mIoes9xME\",\n    \"user\": {\n        \"userId\": 10,\n        \"email\": \"ncabanilla@csumb.edu\",\n        \"isAdmin\": true\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "userId",
+      "value": ""
+    }
+  ]
+}
