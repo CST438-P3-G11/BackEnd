@@ -1,5 +1,7 @@
 package com.planespotter.backend.auth;
 
+import com.planespotter.backend.entities.User;
+import com.planespotter.backend.repositories.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
@@ -20,9 +22,11 @@ import java.util.List;
 public class JwtAuthFilter extends OncePerRequestFilter {
     private static final String BEARER = "Bearer ";
     private final JwtService jwt;
+    private final UserRepository userRepository;
 
-    public JwtAuthFilter(JwtService jwt) {
+    public JwtAuthFilter(JwtService jwt, UserRepository userRepository) {
         this.jwt = jwt;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -34,9 +38,25 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             try {
                 Claims claims = jwt.parse(token);
                 String email = claims.getSubject();
-                var auth = new UsernamePasswordAuthenticationToken(
-                        email, null, List.of(new SimpleGrantedAuthority("ROLE_USER")));
-                SecurityContextHolder.getContext().setAuthentication(auth);
+
+                // Checks if user is in database
+                User user = userRepository.findByEmail(email);
+                if (user == null) {
+                    SecurityContextHolder.clearContext();
+                    chain.doFilter(req, res);
+                    return;
+                }
+
+                // Giving privileges if admin or not
+                if (user.getIs_admin()) {
+                    var auth = new UsernamePasswordAuthenticationToken(
+                            email, null, List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER")));
+                    SecurityContextHolder.getContext().setAuthentication(auth);
+                } else {
+                    var auth = new UsernamePasswordAuthenticationToken(
+                            email, null, List.of(new SimpleGrantedAuthority("ROLE_USER")));
+                    SecurityContextHolder.getContext().setAuthentication(auth);
+                }
             } catch (JwtException ignored) {
                 SecurityContextHolder.clearContext();
             }

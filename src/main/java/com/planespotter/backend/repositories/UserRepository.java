@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
@@ -16,5 +18,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
     @Query (value = "UPDATE \"user\" SET name = :name WHERE user_id = :id", nativeQuery = true)
     int updateName(@Param("id")Long id, @Param("name")String name);
+
+    List<User> findAll();
 
 }
