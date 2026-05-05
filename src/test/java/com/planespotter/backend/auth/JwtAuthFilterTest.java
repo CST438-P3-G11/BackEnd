@@ -1,5 +1,6 @@
 package com.planespotter.backend.auth;
 
+import com.planespotter.backend.repositories.UserRepository;
 import jakarta.servlet.ServletException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,6 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
 
 public class JwtAuthFilterTest {
     private static final String SECRET =
@@ -20,11 +22,13 @@ public class JwtAuthFilterTest {
 
     private JwtService jwtService;
     private JwtAuthFilter filter;
+    private UserRepository userRepository;
 
     @BeforeEach
     void setUp() {
         jwtService = new JwtService(SECRET, 3600);
-        filter = new JwtAuthFilter(jwtService);
+        userRepository = mock(UserRepository.class);
+        filter = new JwtAuthFilter(jwtService, userRepository);
         SecurityContextHolder.clearContext();
     }
 

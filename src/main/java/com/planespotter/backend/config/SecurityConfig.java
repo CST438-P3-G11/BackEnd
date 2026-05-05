@@ -38,6 +38,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/user/admin/**").hasRole("ADMIN")
+                        .requestMatchers(
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                        ).permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .formLogin(AbstractHttpConfigurer::disable)
