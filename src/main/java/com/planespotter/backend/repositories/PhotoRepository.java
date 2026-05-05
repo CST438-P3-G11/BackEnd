@@ -26,6 +26,9 @@ public interface PhotoRepository extends JpaRepository<Photo, Long> {
     @Query(value = "SELECT * FROM \"photo\" ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
     Photo getRandomPhoto();
 
+    @Query(value = "SELECT * FROM \"photo\" WHERE plane_id = :id ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
+    Photo getRandomPhotoByPlane_id(long id);
+
     @Transactional
     @Modifying
     @Query(value = "INSERT INTO \"photo\" (user_id, plane_id, url) VALUES " +

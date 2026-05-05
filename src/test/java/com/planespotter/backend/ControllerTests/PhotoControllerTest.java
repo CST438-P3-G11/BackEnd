@@ -132,7 +132,26 @@ public class PhotoControllerTest {
     }
 
     @Test
-    void insertPhoto_inserrtsPhoto() {
+    void getRandomPhotoByPlaneId_returnsRandomPhoto() {
+        when(photoRepository.getRandomPhotoByPlane_id(1L)).thenReturn(photo);
+
+        ResponseEntity<Photo> response = photoController.getRandomByPlaneId(1L);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(photo, response.getBody());
+    }
+
+    @Test
+    void GetRandomPhotoByPlaneId_404WhenNoPhotosExist() {
+        when(photoRepository.getRandomPhotoByPlane_id(anyLong())).thenReturn(null);
+
+        ResponseEntity<Photo> response = photoController.getRandomByPlaneId(anyLong());
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
+    void insertPhoto_insertsPhoto() {
         ResponseEntity<Photo> response = photoController.insertPhoto(photo);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
