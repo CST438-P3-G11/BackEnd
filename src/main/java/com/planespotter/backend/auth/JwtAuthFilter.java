@@ -39,7 +39,14 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 Claims claims = jwt.parse(token);
                 String email = claims.getSubject();
 
+                // Checks if user is in database
                 User user = userRepository.findByEmail(email);
+                if (user == null) {
+                    SecurityContextHolder.clearContext();
+                    chain.doFilter(req, res);
+                    return;
+                }
+
                 // Giving privileges if admin or not
                 if (user.getIs_admin()) {
                     var auth = new UsernamePasswordAuthenticationToken(

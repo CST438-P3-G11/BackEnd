@@ -1,5 +1,6 @@
 package com.planespotter.backend.auth;
 
+import com.planespotter.backend.entities.User;
 import com.planespotter.backend.repositories.UserRepository;
 import jakarta.servlet.ServletException;
 import org.junit.jupiter.api.AfterEach;
@@ -15,6 +16,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class JwtAuthFilterTest {
     private static final String SECRET =
@@ -51,6 +53,11 @@ public class JwtAuthFilterTest {
     @Test
     void validBearer_setsAuthenticationWithEmailAsPrincipal() throws ServletException, IOException {
         String token = jwtService.issue("alice@example.com", 7L);
+
+        User mockUser = new User(1L,"testuser","alice@example.com", false);
+
+        when(userRepository.findByEmail("alice@example.com"))
+                .thenReturn(mockUser);
 
         MockHttpServletRequest req = new MockHttpServletRequest();
         req.addHeader("Authorization", "Bearer " + token);
